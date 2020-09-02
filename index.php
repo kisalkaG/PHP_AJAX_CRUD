@@ -31,6 +31,7 @@
     <div class="row">
     <?php
      require_once('view.php');   
+     
     ?>
     </div>
 
@@ -55,6 +56,7 @@
        </div>
     </div>
 
+<!-- Update Form -->
     <div class="modal" id="Update">
        <div class="modal-dialog">
           <div class="modal-content">

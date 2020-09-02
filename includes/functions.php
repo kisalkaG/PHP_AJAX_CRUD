@@ -67,16 +67,14 @@
          $query = "select * from user_record where id='$UserID'";
          $result = mysqli_query($con,$query);
          
-
-         while($row=mysqli_fetch_assoc($result))
-         {
-             $User_data = "";
-             $User_data[0]=$row['id'];
+         $User_data = array();
+         while($row=mysqli_fetch_assoc($result))         
+         {             
+            $User_data[0]=$row['id'];
              $User_data[1]=$row['UserName'];
-             $User_data[2]=$row['UserEmail'];
-         } 
-                
-          echo json_encode($User_data);
+             $User_data[2]=$row['UserEmail'];          
+         }
+         echo json_encode($User_data);
           
      }
 
@@ -89,6 +87,7 @@
 
         $query = "update user_record set UserName='$Update_User', UserEmail='$Update_Email' where id=' $Update_ID'";
         $result = mysqli_query($con,$query);
+        
         if($result)
         {
             echo 'Your Record Has Been Updated';

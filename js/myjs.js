@@ -29,8 +29,9 @@ function Insert_record()
                      success : function(data)
                      {
                          $('#message').html(data);
-                         $('#Registration').modal('show');
+                         $('#Registration').modal('hide');
                          $('form').trigger('reset');
+                         location.reload();
                          view_record();
                      }
 
@@ -58,7 +59,7 @@ function view_record()
                 data = $.parseJSON(data);
                 if(data.status=='success')
                 {
-                    $('#table').html(data.html);
+                    $('#table').html(data.html);                    
                 }
             }
 
@@ -80,7 +81,7 @@ function get_record()
                 dataType:'JSON',
                 success:function(data)
                 {
-                   
+                    console.log(data);
                     $('#Up_User_ID').val(data[0]);
                     $('#Up_UserName').val(data[1]);
                     $('#Up_UserEmail').val(data[2]);
@@ -114,7 +115,8 @@ function update_record()
                         success: function(data)
                         {
                             $('#up-message').html(data);
-                            $('#Update').modal('show');
+                            $('#Update').modal('hide');
+                            location.reload();
                             view_record();
                         }
                     }
@@ -141,6 +143,7 @@ function delete_record()
                     success: function(data)
                     {
                         $('#Delete-message').html(data).hide(5000);
+                        location.reload();
                         view_record();
                     }
                 }
