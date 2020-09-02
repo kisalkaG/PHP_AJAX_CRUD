@@ -33,7 +33,7 @@
          
          global $con;
          $value = "";
-         $value='<table class="table table-bordered">
+         $value='<div class="container"><table class="table table-bordered">
                     <tr>
                         <td> User id </td>
                         <td> User User </td>
@@ -55,7 +55,7 @@
                         </tr>';
         }
 
-        $value.='</table>';
+        $value.='</table></div>';
            echo $value;
         // echo json_encode(['status'=>'success','html'=>$value]);
      }
